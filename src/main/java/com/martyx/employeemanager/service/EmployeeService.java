@@ -1,42 +1,47 @@
 package com.martyx.employeemanager.service;
 
-import com.martyx.employeemanager.exception.UserNotFoundException;
 import com.martyx.employeemanager.model.Employee;
-import com.martyx.employeemanager.repo.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
-@Service
-public class EmployeeService {
 
-    private final EmployeeRepository employeeRepository;
+public interface EmployeeService {
 
-    @Autowired
-    public EmployeeService(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
+    /**
+     * Store the employee to DB.
+     *
+     * @param employee .
+     * @return instance of saved employee.
+     */
+    Employee addEmployee(Employee employee);
 
-    public Employee addEmployee(Employee employee) {
-        employee.setEmployeeCode(UUID.randomUUID().toString());
-        return employeeRepository.save(employee);
-    }
+    /**
+     * Find the employee by id.
+     *
+     * @param id .
+     * @return instance of saved employee.
+     */
+    Employee findEmployeeById(Integer id);
 
-    public Employee findEmployeeById(Integer id) {
-        return employeeRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User was not found"));
-    }
+    /**
+     * Find all employees.
+     *
+     * @return all employees from DB.
+     */
+    List<Employee> findAllEmployees();
 
-    public List<Employee> findAllEmployees() {
-        return employeeRepository.findAll();
-    }
+    /**
+     * Update employee by its id.
+     *
+     * @param employee .
+     * @return instance of updated employee.
+     */
+    Employee updateEmployee(Employee employee);
 
-    public Employee updateEmployee(Employee employee) {
-        return employeeRepository.save(employee);
-    }
-
-    public void deleteEmployee(Integer id) {
-        employeeRepository.deleteById(id);
-    }
+    /**
+     * Delete employee by its id.
+     *
+     * @param id .
+     */
+    void deleteEmployee(Integer id);
 }

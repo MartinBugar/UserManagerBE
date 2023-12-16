@@ -2,7 +2,7 @@ package com.martyx.employeemanager.controller;
 
 import com.martyx.employeemanager.model.Employee;
 import com.martyx.employeemanager.service.EmployeeService;
-import jakarta.persistence.criteria.CriteriaBuilder;
+import com.martyx.employeemanager.service.EmployeeServiceBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(EmployeeServiceBean employeeService) {
         this.employeeService = employeeService;
     }
 
