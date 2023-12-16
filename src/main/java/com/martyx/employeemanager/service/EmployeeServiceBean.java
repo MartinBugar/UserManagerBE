@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Service bean for Employee entity.
+ */
 @Service
 public class EmployeeServiceBean implements EmployeeService {
 

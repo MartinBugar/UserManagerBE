@@ -12,7 +12,7 @@ public class Employee implements Serializable {
     @Column(name = "ID", nullable = false, updatable = false)
     private Integer id;
 
-    @Column(name = "EPLOYEE_CODE", nullable = false, updatable = false)
+    @Column(name = "EMPLOYEE_CODE", nullable = false, updatable = false)
     private String employeeCode;
 
     @Column(name = "NAME")
