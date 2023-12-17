@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Employee implements Serializable {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,10 +26,10 @@ public class Employee implements Serializable {
     @Column(name = "IMAGE_URL")
     private String imageUrl;
 
-    public Employee() {
+    public User() {
     }
 
-    public Employee(Integer id, String employeeCode, String name, String email, String jobTitle, String phone, String imageUrl) {
+    public User(Integer id, String employeeCode, String name, String email, String jobTitle, String phone, String imageUrl) {
         this.id = id;
         this.employeeCode = employeeCode;
         this.name = name;
