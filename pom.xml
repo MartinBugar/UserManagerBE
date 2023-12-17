@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.martyx</groupId>
-    <artifactId>EmployeeManager</artifactId>
+    <artifactId>UserManagerBE</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>fsAppBackend</name>
     <description>fsAppBackend</description>
